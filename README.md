@@ -13,7 +13,8 @@ Household Services Application is a multi-user web based app (requires one admin
     -   [Service Table Schema](#Service-Table-Schema)
     -   [Service_request Table Schema](#Service_request-Table-Schema)
     -   [Rejected_req Table Schema](#Rejected_req-Table-Schema)
--   [DB Schema ER Diagram](#DB-Schema-ER-Diagram)       	
+-   [DB Schema ER Diagram](#DB-Schema-ER-Diagram)
+-   [Technologies Used](#Technologies-Used) 
 -   [Getting Started](#Getting-Started)
 	-   [Prerequisites](#Prerequisites)
 	-   [Installation](#Installation)
@@ -179,4 +180,12 @@ Code
 
 ![Database](https://github.com/user-attachments/assets/609c407e-d17e-42fb-a22e-bd007654a63f)
 
+## Technologies Used
 
+1. Flask: Backend framework for building the web application.
+2. SQL Alchemy: ORM (Object-Relational Mapping) tool for database interactions.
+3. SQLite: Database management system for storing application data.
+4. HTML/CSS: Frontend technologies for user interface design and interactivity.
+5. Datetime: Python library for handling date and time operations.
+6. Jinja2: Template engine for rendering dynamic HTML content.
+7. Matplotlib: Python library used for creating different types of charts on the admin/Customer/Professional dashboard.
