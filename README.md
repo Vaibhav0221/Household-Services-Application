@@ -8,14 +8,16 @@ Household Services Application is a multi-user web based app (requires one admin
 -   [Roles](#Features)
 -   [File Structure](#File-Structure)
 -   [Database Structure](#Database-Structure)
-    -   [Course Table Schema](#Course-Table-Schema)
-    -   [Student Table Schema](#Student-Table-Schema)
-    -   [Enrollment Table Schema](#Enrollment-Table-Schema)
+    -   [Customer Table Schema](#Customer-Table-Schema)
+    -   [Professional Table Schema](#Professional-Table-Schema)
+    -   [Service Table Schema](#Service-Table-Schema)
+    -   [Service_request Table Schema](#Service_request-Table-Schema)
+    -   [Rejected_req Table Schema](#Rejected_req-Table-Schema)
+-   [DB Schema ER Diagram](#DB-Schema-ER-Diagram)       	
 -   [Getting Started](#Getting-Started)
 	-   [Prerequisites](#Prerequisites)
 	-   [Installation](#Installation)
 -   [Screenshots](#Screenshots)
--   [Further Api Implementation](#Further-Api-Implementation)       	
 
 ## Roles
 
@@ -101,3 +103,80 @@ Code
 ```
 
 ## Database Structure
+
+
+### Customer Table Schema
+```bash
+| Column Name    | Column Type | Constraints                           |
+|----------------|-------------|---------------------------------------|
+| Id             | Integer     | Primary Key, Auto Increment, Not Null |
+| Full_name      | String      | Not Null                              |
+| Email          | String      | Unique, Not Null                      |
+| Phone_number   | Integer     | Not Null                              |
+| Password       | String      | Not Null                              |
+| Address        | String      | Not Null                              |
+| Pincode        | Integer     | Not Null                              |
+
+```
+
+
+### Professional Table Schema
+```bash
+| Column Name    | Column Type | Constraints                           |
+|----------------|-------------|---------------------------------------|
+| Id             | Integer     | Primary Key, Auto Increment, Not Null |
+| Full_name      | String      | Not Null                              |
+| Email          | String      | Unique, Not Null                      |
+| Password       | String      | Not Null                              |
+| Phone_number   | Integer     | Not Null                              |
+| Service_name   | String      |                                       |
+| Address        | String      | Not Null                              |
+| Pincode        | Integer     | Not Null                              |
+| Experience     | Integer     |                                       |
+| Status         | String      |                                       |
+
+```
+
+
+### Service Table Schema
+```bash
+| Column Name    | Column Type | Constraints                           |
+|----------------|-------------|---------------------------------------|
+| Service_id     | Integer     | Primary Key, Auto Increment, Not Null |
+| Service_name   | String      | Not Null                              |
+| Price          | Integer     | Not Null                              |
+| Time_required  | Integer     | Not Null                              |
+| Description    | String      | Not Null                              |
+
+```
+
+### Service_request Table Schema
+```bash
+| Column Name         | Column Type | Constraints                                |
+|---------------------|-------------|--------------------------------------------|
+| Id                  | Integer     | Primary Key, Auto Increment, Not Null      |
+| Service_id          | Integer     | Foreign Key (service.Service_id), Not Null |
+| Customer_id         | Integer     | Foreign Key (customer.Id), Not Null        |
+| Professional_id     | Integer     | Foreign Key (professional.Id)              |
+| date_of_request     | Date        | Not Null                                   |
+| date_of_completion  | Date        |                                            |
+| Service_status      | String      | Not Null                                   |
+| Remarks             | String      |                                            |
+
+```
+
+### Rejected_req Table Schema
+```bash
+| Column Name         | Column Type | Constraints                                |
+|---------------------|-------------|--------------------------------------------|
+| id                  | Integer     | Primary Key, Auto Increment, Not Null      |
+| service_req_id      | Integer     | Foreign Key (service_request.Id), Not Null |
+| professional_id     | Integer     | Foreign Key (professional.Id), Not Null    |
+
+```
+
+## DB Schema ER Diagram
+
+![Database](https://github.com/user-attachments/assets/609c407e-d17e-42fb-a22e-bd007654a63f)
+
+
