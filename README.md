@@ -37,6 +37,13 @@ This platform is having three roles:
 - He/she can accept/reject an assigned service request in respective service
 - Professional will exit the location after the service is closed by the customer
 
+
+### 3. Customer - An individual who has to book a service request
+
+- Customer can Login/Register
+- Cumtomer can View/ Search/ Book/ Close a respective service
+- He/she can give remarks to the Professional after closing the service
+
 ## File Structure
 
 ```bash
@@ -92,11 +99,5 @@ Code
         ├── Professional_home.html
         └── Professional_register.html
 ```
+
 ## Database Structure
-### 3. Customer - An individual who has to book a service request
-
-- Customer can Login/Register
-- Cumtomer can View/ Search/ Book/ Close a respective service
-- He/she can give remarks to the Professional after closing the service
-
-  
