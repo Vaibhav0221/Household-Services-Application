@@ -189,3 +189,75 @@ Code
 5. Datetime: Python library for handling date and time operations.
 6. Jinja2: Template engine for rendering dynamic HTML content.
 7. Matplotlib: Python library used for creating different types of charts on the admin/Customer/Professional dashboard.
+
+
+## Getting Started
+
+### Prerequisites
+- Python 3.x
+- Flask
+- Flask-SQLAlchemy
+
+### Installation
+- Clone the repository:
+```bash
+    git clone https://github.com/Vaibhav0221/Household-Services-Application.git
+```
+
+- Navigate to the project directory:
+```bash
+    cd Code
+```
+
+- Install the required packages:
+```bash
+    pip install -r requirements.txt
+```
+
+- Run the app file
+```bash
+    flask run 
+```
+
+- You can also run the main.py
+```bash
+    python main.py
+``` 
+
+- You can also directly run script file
+```bash
+    ./Setup_and_Run.sh
+``` 
+
+
+## Screenshots
+
+### Login & Register
+
+![Home](https://github.com/user-attachments/assets/af7592a3-318b-40a9-b26a-2a7d6c66db0c)
+![C_Signup](https://github.com/user-attachments/assets/5df0d217-63a3-4e4e-bafe-209a952ef291)
+![S_Signup](https://github.com/user-attachments/assets/5b5d5b75-f920-4186-849e-c3ef95d884f1)
+
+###Admin Page
+![A_home](https://github.com/user-attachments/assets/97185ba1-fa88-4bb5-9b55-eb35fa90a8a8)
+![A_Service](https://github.com/user-attachments/assets/c912d914-8e5e-488e-890f-222b8ef1c2d2)
+![A_new_service](https://github.com/user-attachments/assets/9d3624b5-d65e-41fc-9a20-b95e01f07ec6)
+![A_C_details](https://github.com/user-attachments/assets/7501e583-46ac-419d-b12f-0f97e9a78676)
+![A_P_Details](https://github.com/user-attachments/assets/ce1be5b7-9467-4adb-8b40-dd018ff89709)
+![A_Search](https://github.com/user-attachments/assets/bf19dcd2-5c6d-4b21-b0cd-cde731183d04)
+![A_Summary](https://github.com/user-attachments/assets/0c789723-3f5e-4d13-b479-e0f4efa6657a)
+
+
+### Customer Page
+![C_home](https://github.com/user-attachments/assets/925c92ce-6773-440b-9225-8ffd41849586)
+![C_Search](https://github.com/user-attachments/assets/f6f5c8fe-594e-4344-8708-a60f9ff113fa)
+![C_summary](https://github.com/user-attachments/assets/2ae793f0-e3d8-4cf2-9586-e40dd9fcb227)
+
+
+
+
+### Professional Page
+![P_Home](https://github.com/user-attachments/assets/e4fb22d2-8689-41ed-9fdc-5b915554364e)
+![P_Search](https://github.com/user-attachments/assets/c3cf1f8c-fdf4-4ebe-9cf9-59432b22c050)
+![P_Summary](https://github.com/user-attachments/assets/3429e5e9-16d5-47ef-ac47-c47eef85a156)
+
