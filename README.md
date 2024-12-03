@@ -78,32 +78,35 @@ Code
     │   ├── style.css
     │   └── style1.css
     └── templates              //View
-        ├── Admin_Customer.html
-        ├── Admin_Search.html
-        ├── Admin_Services.html
-        ├── Admin_Summary.html
-        ├── Admin_edit_service.html
-        ├── Admin_header.html
-        ├── Admin_home.html
-        ├── Admin_new_service.html
-        ├── Admin_professional.html
-        ├── Customer_Search.html
-        ├── Customer_Service.html
-        ├── Customer_Summary.html
-        ├── Customer_details.html
-        ├── Customer_edit_details.html
-        ├── Customer_header.html
-        ├── Customer_home.html
-        ├── Customer_register.html
-        ├── Customer_req_close.html
-        ├── Login.html
-        ├── Professional_Search.html
-        ├── Professional_Summary.html
-        ├── Professional_details.html
-        ├── Professional_edit_details.html
-        ├── Professional_header.html
-        ├── Professional_home.html
-        └── Professional_register.html
+    │   ├── Admin_Customer.html
+    │   ├── Admin_Search.html
+    │   ├── Admin_Services.html
+    │   ├── Admin_Summary.html
+    │   ├── Admin_edit_service.html
+    │   ├── Admin_header.html
+    │   ├── Admin_home.html
+    │   ├── Admin_new_service.html
+    │   ├── Admin_professional.html
+    │   ├── Customer_Search.html
+    │   ├── Customer_Service.html
+    │   ├── Customer_Summary.html
+    │   ├── Customer_details.html
+    │   ├── Customer_edit_details.html
+    │   ├── Customer_header.html
+    │   ├── Customer_home.html
+    │   ├── Customer_register.html
+    │   ├── Customer_req_close.html
+    │   ├── Login.html
+    │   ├── Professional_Search.html
+    │   ├── Professional_Summary.html
+    │   ├── Professional_details.html
+    │   ├── Professional_edit_details.html
+    │   ├── Professional_header.html
+    │   ├── Professional_home.html
+    │   └── Professional_register.html
+    └──LICENSE
+    └──README.md
+    
 ```
 
 ## Database Structure
