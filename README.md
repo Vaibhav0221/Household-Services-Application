@@ -2,6 +2,9 @@
 
 Household Services Application is a multi-user web based app (requires one admin and other service professionals/ customers) which acts as platform for providing comprehensive home servicing and solutions.
 
+[![video](https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/1r5KiWuqGjC45QLV5GUFrLgx_6jzOQyr0/view?usp=sharing)
+
+
 ![Home](https://github.com/user-attachments/assets/c4b6c1a0-66d9-4326-8449-fdb14d231d0e)
 
 ## Index
