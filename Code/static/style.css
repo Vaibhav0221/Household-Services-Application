@@ -1,0 +1,42 @@
+.Box{
+    max-width:400px;
+    margin: 100px auto 10px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+Body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.heading{
+    font-size:52px;
+    margin-bottom: 10px;
+    color: rgba(50,50,52,255);
+}
+
+input,select{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: rgba(50,50,52,255);
+    color: #fff;
+    padding: 10px 20px;
+    border:  none;
+    border-radius: 3px;
+    cursor: pointer;  
+}
+
+.link{
+    padding-top: 10px;
+}
+
+.error{
+    color: red;
+  }

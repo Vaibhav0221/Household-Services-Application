@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Customer_header.html' %}
+    <div class="profile"><a href="/Customer/{{ID}}">Profile!</a></div>
+    <h1>--Best {{name}} packages--</h1>
+    <table>
+        {%for i in all_services%}
+        <tr>
+        <td>{{loop.index}}.</td>
+        <td>-> {{i['Description']}}, price will be <strong>{{i['Price']}} rupees</strong> and time taken will be <strong>{{i['Time_required']}} day</strong>.</td>
+        <td><a href="/Customer/{{ID}}/Book/{{i['Service_id']}}"><button>Book</button></a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="/Customer/Home/{{ID}}">Back</a>
+</body>
+</html>

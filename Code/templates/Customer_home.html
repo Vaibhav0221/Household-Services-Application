@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+  {% include 'Customer_header.html' %}
+    
+    <div class="profile"><a href="/Customer/{{ID}}">Profile!</a></div>
+    <h3> Looking for?</h3>
+    <table>
+    <tr>
+    {%for i in services%}
+    <td><a href="/Customer/Service/{{ID}}/{{i['Service_name']}}">{{i['Service_name']}}</a></td>
+    {%endfor%}
+    </tr>
+    </table>
+
+    <h3>Service History</h3>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Service Name</th>
+          <th>Professional Name</th>
+          <th>Contact number</th>
+          <th>Status</th>
+        </tr>
+        {%for a,b in Service_history_1%}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{a}}</td>
+          <td>None</td>
+          <td>None</td>
+          <td>{{b}}</td>
+        </tr>
+        {%endfor%}
+        {%for a,b,c,d,e,f in Service_history_2%}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{b}}</td>
+          <td>{{c}}</td>
+          <td>{{d}}</td>
+          <td>{%if f==None%}
+            <a href="/Customer/Home/{{ID}}/Close/{{a}}"><button>Close it?</button></a>
+            {%else%}
+            {{e}}</td>
+            {%endif%}
+        </tr>
+        {%endfor%}
+      </table>
+
+
+    
+</body>
+</html>

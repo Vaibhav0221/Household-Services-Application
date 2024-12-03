@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Admin_header.html' %}
+    <div class="edit">
+    <h2>New Service</h2>
+    <form action="/Admin/Home/New_Service" method="post">
+        <input type="text" name="name" placeholder="Service Name" ><br>
+        <input type="text" name="description" placeholder="description"><br>
+        <input type="text" name="price"  placeholder="Base Price"><br>
+        <input type="text" name="time_required" placeholder="Time Required"><br><br>
+        <button type="submit">Add</button>
+        <button type="reset">Cancel</button>
+    </form>
+    </div>
+    <a href="/Admin/Home">Back</a>
+</body>
+</html>

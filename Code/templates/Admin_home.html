@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Admin_header.html' %}
+        <h3>Services</h3>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Service Name</th>
+            <th>Description</th>
+            <th>Base Price</th>
+            <th>Actions</th>
+          </tr>
+          {%for i in S_data%}
+          <tr>
+            <td><a href="/Admin/Home/Service/{{i['Service_id']}}">{{i['Service_id']}}</a></td>
+            <td>{{i['Service_name']}}</td>
+            <td>{{i['Description']}}</td>
+            <td>{{i['Price']}}</td>
+            <td><a href="/Admin/Home/Service/Edit/{{i['Service_id']}}">Edit</a>/<a href="/Admin/Home/Service/Delete/{{i['Service_id']}}">Delete</a></td>
+          </tr>
+          {%endfor%}
+        </table>
+        <a href="/Admin/Home/New_Service">+New Service</a>
+
+        <h3>Customers</h3>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+          {%for i in C_data%}
+          <tr>
+            <td><a href="/Admin/Customer/{{i['Id']}}">{{i['Id']}}</a></td>
+            <td>{{i['Full_name']}}</td>
+            <td>{{i['Phone_number']}}</td>
+            <td>{{i['Address']}}</td>
+            <td><a href="/Admin/Customer/{{i['Id']}}/Delete">Delete</a></td>
+          </tr>
+          {%endfor%}
+        </table>
+
+
+        <h3>Professionals</h3>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Experience</th>
+            <th>Contact Number</th>
+            <th>Service Name</th>
+            <th>Action</th>
+          </tr>
+          {%for i in P_data%}
+          <tr>
+            <td><a href="/Admin/Home/Professional/{{i['Id']}}">{{i['Id']}}</a></td>
+            <td>{{i['Full_name']}}</td>
+            <td>{{i['Experience']}}</td>
+            <td>{{i['Phone_number']}}</td>
+            <td>{{i['Service_name']}}</td>
+            {%if i['Status']=="Approve"%}
+              <td>{{i['Status']}}d</td>
+            {%elif i['Status']=="Reject"%}
+              <td>{{i['Status']}}ed</td>
+            {%else%}
+              <td><a href="/Admin/Professional/{{i['Id']}}/Approve">Approve</a>/<a href="/Admin/Professional/{{i['Id']}}/Reject">Reject</a>/<a href="/Admin/Professional/{{i['Id']}}/Delete">Delete</a></td>
+            {%endif%}
+          </tr>
+          {%endfor%}
+        </table>
+
+        <h3>Service Requests</h3>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Service Name</th>
+            <th>Assigned Professional</th>
+            <th>Status (R/A/C)</th>
+          </tr>
+          {%for a,b,c,d in All1%}
+          <tr>
+            <td>{{a}}</td>
+            <td>{{b}}</td>
+            <td>{{c}}</td>
+            <td>N/A</td>
+            <td>{{d}}</td>
+          </tr>
+          {%endfor%}
+          {%for a,b,c,d,e in All2%}
+          <tr>
+            <td>{{a}}</td>
+            <td>{{b}}</td>
+            <td>{{c}}</td>
+            <td>{{d}}</td>
+            <td>{{e}}</td>
+          </tr>
+          {%endfor%}
+        </table>
+    
+</body>
+</html>

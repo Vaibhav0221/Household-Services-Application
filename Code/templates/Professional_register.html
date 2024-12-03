@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">"
+    <title>HSA</title>
+</head>
+<body>
+    <div class="Box">
+    <img src="{{url_for('static', filename='Images/Logo.jpg')}}" width="140" height="140">
+    <h1 style="margin-top: 5px;">Service Professional Signup</h2>
+    <form action="/Professional/Register", method="post">
+        <input type="email" id="email" name="email" placeholder="email" required>
+        <input type="password" id="password" name="password" placeholder="password" required>
+        <input type="tel" id="phone" name="phone_number" placeholder="Contact number">
+        <input type="text" id="fullname" name="fullname" placeholder="fullname" required>
+        <select name="servicename" required>
+            <option value="" disabled selected>Select your service</option>
+            {%for i in services%}
+            <option value="{{i['Service_name']}}">{{i['Service_name']}}</option>
+            {%endfor%}
+        </select>
+        <input type="text" id="experience" name="experience" placeholder="experience (in yrs)" required>
+        <input type="file" id="file" name="file" placeholder="Attach documents" accept="image/*,.pdf" required>
+        <input type="text" id="address" name="address" placeholder="address" required>
+        <input type="text" id="pin" name="pin" placeholder="pincode" inputmode="numeric" required>
+        <button type="submit"> Register </button>
+    </form>
+    
+    <br><a href="/">Login here</a>
+    </div>
+    {% if error==1%}
+    <h2 class ="error">Professional already Exists!</h2>
+    {%endif%}
+</body>
+</html>

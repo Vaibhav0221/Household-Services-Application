@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Professional_header.html' %}
+    <h3>Professional Search</h3>
+    <form action="/Professional/{{ID}}/Search" method="post">
+        <label for="servicename" >Search by: </label>
+        <select name="servicename" required>
+        <option value="" disabled selected>Select field</option>
+        {%for i in services%}
+            <option value="{{i}}">{{i}}</option>
+        {%endfor%}
+        </select>
+        <input type="text" name="search_element" >
+        <button>Search</button>
+
+        <div>
+        <br>All Searches are <strong>Caseinsensitive</strong>
+        <br>Please Enter Date format: YYYY-MM-DD
+        </div>
+        {%if res==1%}
+        <h2>--Results below--</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Customer_name</th>
+                <th>Customer_number</th>
+                <th>Pincode</th>
+                <th>Location</th>
+                <th>Date_of_request</th>
+                <th>Date_of_completion</th>
+                <th>Price</th>
+            </tr>
+            {%for i in req_data%}
+            <tr>
+            <td>{{loop.index}}.</td>
+            <td>{{i['Customer_name']}}</td>
+            <td>{{i['Customer_number']}}</td>
+            <td>{{i['Pincode']}}</td>
+            <td>{{i['Location']}}</td>
+            <td>{{i['Date_of_request']}}</td>
+            <td>{{i['Date_of_completion']}}</td>
+            <td>{{i['Price']}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+        {% elif res==2%}
+        <h2> No Result data</h2>
+        {%endif%}
+
+    </form>
+</body>
+</html>

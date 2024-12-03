@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Customer_header.html' %}
+    <h2>Service remarks</h2>
+    <h2>Request Id: {{abc[0]}}</h2>
+    <form action="/Customer/Home/{{ID}}/Close/{{a}}" method="post">
+        <table>
+            <tr>
+                <td>Service Name: {{abc[1]}}</td>
+                <td>Description: {{abc[2]}}</td>
+                <td>Today's Date: {{date}}</td>
+            </tr>
+            <tr>
+                <td>Professional Id: {{abc[3]}}</td>
+                <td>Professional Name: {{abc[4]}}</td>
+                <td>Contact number: {{abc[5]}}</td>
+            </tr>
+        </table>
+        <br><label style="font-size: 16px;" for="remarks">Remarks (between 0 and 5):</label>
+        <input type="number" name="remarks" min="0" max="5" required> Stars
+        <br><br><input type="submit" value="Submit">
+        <br><br><a href="/Customer/Home/{{ID}}" class="button">Close</a>
+    </form>
+</body>
+</html>

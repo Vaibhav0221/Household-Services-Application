@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSA</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <div class="Box">
+        <h1 class="heading">Welcome to</h1>
+        <img src="{{url_for('static', filename='Images/Logo.jpg')}}" width="200" height="200">
+        <form action="/" method="post">
+            <input type="email" name="email" placeholder="email" required>
+            <input type="password" name="password" placeholder="password" required>
+            <button type="submit"> Login </button>
+        <div class="link">
+            <a href="/Customer/Register">Create an Account</a><br>
+            <a href="/Professional/Register">Register as Professional</a>
+        </div>
+    </div>
+    {% if error==1%}
+    <h2 class ="error">Wrong Email or Password !</h2>
+    <h2 class ="error">If you have login as Customer then maybe Admin has deleted you.</h2>
+    <h2 class="error">If you have login as Professional then maybe respective service has been deleted or you are not approved by Admin.</h2>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Professional_header.html' %}
+    <div class="edit">
+    <h2> Professional details :-</h2>
+    <p> Name  : {{prof['Full_name']}}</p>
+    <p> Password : {{prof['Password']}}</p>
+    <p> E-mail  : {{prof['Email']}}</p>
+    <p> Contact number  : {{prof['Phone_number']}}</p>
+    <p> Service name  : {{prof['Service_name']}}</p>
+    <p> Address  : {{prof['Address']}}</p>
+    <p> Pincode  : {{prof['Pincode']}}</p>
+    <p> Experience  : {{prof['Experience']}} Years</p>
+    <p> If you want to edit <a href="/Professional/Edit/{{ID}}">click me!</a></p><br>
+    </div>
+    <a href="/Professional/Home/{{ID}}">Back</a>
+</body>
+</html>

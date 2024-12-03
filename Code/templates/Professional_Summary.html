@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Professional_header.html' %}
+    <h2>Professional Summary</h2>
+    <img src="{{url_for('static',filename='Images/P_Summary_1.jpg')}}" alt="Graph1" width="550px" height="400px">
+    <img src="{{url_for('static',filename='Images/P_Summary_2.jpg')}}" alt="Graph2" width="550px" height="400px">
+</body>
+</html>

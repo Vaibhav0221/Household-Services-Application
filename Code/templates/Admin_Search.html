@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Admin_header.html' %}
+    <h2>Admin Search</h2>
+    <form action="/Admin/Search" method="post">
+        <label for="servicename" >Search by: </label>
+        <select name="servicename" required>
+        <option value="" disabled selected>Select field</option>
+        {%for i in services%}
+            <option value="{{i}}">{{i}}</option>
+        {%endfor%}
+        </select>
+        <input type="text" name="search_element" >
+        <button>Search</button>
+
+        <div>
+        <br>
+        Note:- All Searches are <strong>Caseinsensitive</strong>
+        </div>
+        {%if res==1%}
+        <h2>--Results below--</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Customer_name</th>
+                <th>Professional_name</th>
+                <th>Service_name</th>
+                <th>Status</th>
+            </tr>
+            {%for i in req_data%}
+            <tr>
+            <td>{{loop.index}}.</td>
+            <td>{{i['C_name']}}</td>
+            <td>{{i['P_name']}}</td>
+            <td>{{i['S_name']}}</td>
+            <td>{{i['Status']}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+        {% elif res==2%}
+        <h2> No Result data</h2>
+        {%endif%}
+
+    </form>
+</body>
+</html>

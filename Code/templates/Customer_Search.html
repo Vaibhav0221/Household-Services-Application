@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='Images/Favicon.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+    <title>HSA</title>
+</head>
+<body>
+    {% include 'Customer_header.html' %}
+    <h2>Customer Search</h2>
+    <form action="/Customer/{{ID}}/Search" method="post">
+        <label for="servicename" >Search by: </label>
+        <select name="servicename" required>
+        <option value="" disabled selected>Select field</option>
+        {%for i in services%}
+            <option value="{{i}}">{{i}}</option>
+        {%endfor%}
+        </select>
+        <input type="text" name="search_element" >
+        <button>Search</button>
+
+        <div><br> Note: for <strong>description</strong> either you can only enter 1 keyword or number of words in consecutive order
+        <br>All Searches are <strong>Caseinsensitive</strong>
+        </div>
+        {%if res==1%}
+        <h2>--Results below--</h2>
+        <table>
+            {%for i in req_data%}
+            <tr>
+            <td>{{loop.index}}.</td>
+            <td>-> {{i['Description']}}, price will be <strong>{{i['Price']}} rupees</strong> and time taken will be <strong>{{i['Time_required']}} day</strong>.</td>
+            <td><a href="/Customer/{{ID}}/Book/{{i['Service_id']}}"><button>Book</button></a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        {% elif res==2%}
+        <h2> No Result data</h2>
+        {%endif%}
+
+    </form>
+    
+</body>
+</html>
